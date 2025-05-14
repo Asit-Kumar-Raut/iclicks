@@ -5,97 +5,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>__iclicks___</title>
     <link rel="stylesheet" href="home.css">
-   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-       <a href="https://www.instagram.com/__iclicks___/?hl=en"> <img src="iclilogo.png" alt="Website Logo" class="logo"></a>
-        __iclicks___
-    </header>
-
-    <main id="content">
-        <section id="home" class="page active">
-            <h1>WELCOME TO NATURE</h1>
-            <p>Nature, in its vast and intricate tapestry, is the lifeblood of our planet. It encompasses everything from the towering mountains and expansive oceans to the delicate ecosystems that thrive in hidden corners. It's the air we breathe, the water we drink, and the very ground beneath our feet. Nature provides us with sustenance, beauty, and a sense of wonder that resonates deep within our souls. Beyond its physical contributions, nature offers a sanctuary, a place of solace and rejuvenation. However, this precious gift is fragile, and it's our collective responsibility to protect and preserve its delicate balance, ensuring that future generations can also experience the profound connection with the natural world.</p>
-            <p>Animals, in their astonishing diversity, paint a vibrant picture of life on Earth. From the microscopic creatures dwelling in the soil to the majestic whales traversing the oceans, each plays a vital role in the intricate web of ecosystems. Their behaviors, adaptations, and sheer existence inspire awe and wonder, reminding us of the interconnectedness of all living things. Animals contribute to the balance of nature, pollinating plants, controlling populations, and enriching the soil. They are also sources of companionship, inspiration, and scientific discovery. However, many species face threats from habitat loss, climate change, and human activity, highlighting the urgent need for conservation efforts to safeguard their future and the health of our planet.</p>
-            <p>Social media has become an omnipresent force in modern life, reshaping how we connect, communicate, and consume information. It offers a platform for instant global interaction, fostering communities and enabling the rapid dissemination of ideas. While it can be a powerful tool for social movements, creative expression, and staying connected with loved ones, it also presents challenges. The constant stream of information can lead to information overload, and the curated nature of online personas can contribute to feelings of inadequacy. Concerns about privacy, online harassment, and the spread of misinformation are significant, prompting ongoing discussions about responsible use and the impact of social media on mental health and societal well-being.</p>
-            <p>Pollution, a pervasive and destructive force, is the contamination of our environment with harmful substances, disrupting the delicate balance of ecosystems and threatening the health of all living beings. From the smog-choked skies of urban centers to the plastic-laden depths of our oceans, pollution manifests in various forms, including air, water, and soil contamination. Industrial emissions, vehicle exhaust, agricultural runoff, and improper waste disposal contribute to this widespread problem, releasing toxins that poison our air, water, and land. The consequences are dire, leading to respiratory illnesses, waterborne diseases, habitat destruction, and the disruption of global climate patterns. Addressing this crisis requires a collective effort, encompassing sustainable practices, responsible consumption, and a commitment to protecting our planet for future generations.</p>
-            <p>Nature itself provides several mechanisms that help to mitigate and overcome pollution, although these natural processes are increasingly strained by the sheer volume of human-generated pollutants. Here are some key ways in which nature helps to combat pollution:<br>
-
-               (i) Forests and Vegetation:
-                Trees and plants act as natural air filters, absorbing pollutants like carbon dioxide, sulfur dioxide, and nitrogen oxides.
-                They also help to trap particulate matter, reducing air pollution.
-                Forests stabilize soil, preventing erosion and reducing water pollution from sediment runoff.<br>
-               (ii)Wetlands:
-                Wetlands act as natural water filters, removing pollutants like excess nutrients, heavy metals, and pesticides.
-                They also help to absorb floodwaters, reducing the impact of water pollution from runoff.<br>
-               (iii)Oceans:
-                Oceans absorb large amounts of carbon dioxide from the atmosphere, helping to regulate climate.
-                However, this absorption leads to ocean acidification, which is a significant environmental problem.<br>
-               (iv)Soil Microorganisms:
-                Soil contains a vast array of microorganisms that break down organic pollutants, such as pesticides and oil spills.
-                These microorganisms play a crucial role in soil remediation.<br>
-                (v) Natural Water Cycles:
-                The water cycle, including evaporation, precipitation, and filtration, helps to purify water.
-                However, this process can be overwhelmed by high levels of pollution.<br>
-                It's important to understand that while nature has its own pollution-fighting mechanisms, these are not a substitute for human efforts to reduce pollution at its source. Overburdening these natural systems will lead to their degradation, and a decrease in their ability to help clean the planet.</p>
-        </section>
-
-        <section id="gallery" class="page">
-            <h1>Gallery</h1>
-            <input type="text" id="search" placeholder="Search photos...">
-            <div id="categories">
-                <button data-category="nature">🌿 Nature</button>
-                <button data-category="animals">🐾 Animals</button>
-                <button data-category="architecture">🏛 others</button>
+    <!-- Avatar Selection Modal (shown first) -->
+    <div id="avatar-modal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to __iclicks___</h2>
+            <p>First, choose your avatar</p>
+            <div class="avatar-grid">
+                <div class="avatar-option" data-avatar="avatar1.jpg"><img src="a1.jpg" alt="Avatar 1"></div>
+                <div class="avatar-option" data-avatar="avatar2.jpg"><img src="a2.jpeg" alt="Avatar 2"></div>
+                <div class="avatar-option" data-avatar="avatar3.jpg"><img src="a3.jpeg" alt="Avatar 3"></div>
+                <div class="avatar-option" data-avatar="avatar4.jpg"><img src="a4.jpeg" alt="Avatar 4"></div>
+                <div class="avatar-option" data-avatar="avatar5.jpg"><img src="a5.jpeg" alt="Avatar 5"></div>
+                <div class="avatar-option" data-avatar="avatar6.jpg"><img src="a7.jpeg" alt="Avatar 6"></div>
             </div>
-            <div id="photos"></div>
-        </section>
+            <button id="confirm-avatar" class="auth-btn">Continue</button>
+        </div>
+    </div>
 
-        <section id="contact" class="page">
-            <h1>Contact Us</h1>
-            <p>We'd love to hear from you!</p>
-            <div class="profile">
-                <img src="iclilogo.png" alt="My Photo">
-                <div class="details">
-                    <p>__iclicks___</p>
-                   <p>Instagram: <a href="https://www.instagram.com/__iclicks___/?hl=en">__iclicks___</p></a>
+    <!-- Login/Signup Modal -->
+    <div id="auth-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+            
+            <div id="login" class="auth-form active">
+                <h2>Welcome Back!</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <input type="email" id="login-email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Login</button>
+                </form>
+            </div>
+            
+            <div id="signup" class="auth-form">
+                <h2>Create Account</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <input type="text" id="signup-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="signup-email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signup-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Content (hidden until login) -->
+    <div id="app-content" style="display: none;">
+        <header>
+            <a href="https://www.instagram.com/__iclicks___/?hl=en"><img src="iclilogo.png" alt="Website Logo" class="logo"></a>
+            <h1>__iclicks___</h1>
+            <div id="you-btn" class="you-button">
+                <i class="fas fa-user"></i>
+            </div>
+        </header>
+
+        <!-- YOU Page Overlay -->
+        <div id="you-page" class="you-page-overlay">
+            <div class="you-page-content">
+                <button id="close-you-page" class="close-btn"><i class="fas fa-times"></i></button>
+                <div class="you-profile">
+                    <img id="user-avatar" src="" alt="Your Avatar">
+                    <h3 id="user-name"></h3>
+                    <div class="live-viewers">
+                       <i class="fas fa-users"></i>
+                            <span id="viewer-count">0</span> live viewers
+                           </div>
+                    <button id="logout-btn" class="logout-button">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
                 </div>
             </div>
-            <div class="profile">
-                <img src="friend.jpg" alt="My Photo">
-                <div class="details">
-                    <p>ALOK KUMAR MISHRA</p>
-                   <p>Instagram: <a href="https://www.instagram.com/_isitun__/?hl=en">_isitun__ </p></a>
-                </div>
-            </div>
-            <div class="profile">
-                <img src="myphoto.jpg" alt="My Photo">
-                <div class="details">
-                    <p>ASIT KUMAR RAUT</p>
-                   <p>Instagram: <a href="https://www.instagram.com/asitkumar__0__0/?hl=en"> @asitkumar__0__0</p></a>
-                </div>
-            </div>
-            <div class="rating">
-                <p>Your insights will help us to improve:</p>
-                <div id="star-rating">
-                    <span>😞 </span><span>🙁</span><span>😐</span><span>🙂</span><span>😊 </span>
-                </div>
-                <div id="rating-thank-you" style="display: none;">
-                    <p>Thank you for rating us!</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
 
-    <nav>
-        <button data-page="home">🏠 Home</button>
-        <button data-page="gallery">🖼 Gallery</button>
-        <button data-page="contact">📞 Contact</button>
-    </nav>
-    <div id="fullscreen-overlay" style="display: none;">
-        <img id="fullscreen-image">
-        <button id="close-fullscreen">✕</button>
+        <main id="content">
+            <section id="home" class="page active">
+                <div class="content-wrapper">
+                    <h1 class="welcome-title">WELCOME TO NATURE</h1>
+                    <div class="content-box">
+                        <p>Nature, in its vast and intricate tapestry, is the lifeblood of our planet. It encompasses everything from the towering mountains and expansive oceans to the delicate ecosystems that thrive in hidden corners. It's the air we breathe, the water we drink, and the very ground beneath our feet. Nature provides us with sustenance, beauty, and a sense of wonder that resonates deep within our souls. Beyond its physical contributions, nature offers a sanctuary, a place of solace and rejuvenation. However, this precious gift is fragile, and it's our collective responsibility to protect and preserve its delicate balance, ensuring that future generations can also experience the profound connection with the natural world.</p>
+                    </div>
+                    <div class="content-box">
+                        <p>Animals, in their astonishing diversity, paint a vibrant picture of life on Earth. From the microscopic creatures dwelling in the soil to the majestic whales traversing the oceans, each plays a vital role in the intricate web of ecosystems. Their behaviors, adaptations, and sheer existence inspire awe and wonder, reminding us of the interconnectedness of all living things. Animals contribute to the balance of nature, pollinating plants, controlling populations, and enriching the soil. They are also sources of companionship, inspiration, and scientific discovery. However, many species face threats from habitat loss, climate change, and human activity, highlighting the urgent need for conservation efforts to safeguard their future and the health of our planet.</p>
+                    </div>
+                    <div class="content-box">
+                        <p>Social media has become an omnipresent force in modern life, reshaping how we connect, communicate, and consume information. It offers a platform for instant global interaction, fostering communities and enabling the rapid dissemination of ideas. While it can be a powerful tool for social movements, creative expression, and staying connected with loved ones, it also presents challenges. The constant stream of information can lead to information overload, and the curated nature of online personas can contribute to feelings of inadequacy. Concerns about privacy, online harassment, and the spread of misinformation are significant, prompting ongoing discussions about responsible use and the impact of social media on mental health and societal well-being.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="page">
+                <div class="content-wrapper">
+                    <h1 class="gallery-title">Gallery</h1>
+                    <div class="search-container">
+                        <input type="text" id="search" placeholder="Search photos...">
+                    </div>
+                    <div id="categories">
+                        <button data-category="nature">🌿 Nature</button>
+                        <button data-category="animals">🐾 Animals</button>
+                        <button data-category="architecture">🏛 Others</button>
+                    </div>
+                    <div id="photos"></div>
+                </div>
+            </section>
+
+            <section id="contact" class="page">
+                <div class="content-wrapper">
+                    <h1 class="contact-title">Get In Touch</h1>
+                    <p class="contact-subtitle">We'd love to hear from you!</p>
+                    
+                    <div class="contact-container">
+                        <div class="contact-form">
+                            <form id="message-form">
+                                <div class="form-group">
+                                    <input type="text" id="contact-name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="contact-email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">Send Message</button>
+                            </form>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="info-card">
+                                <i class="fas fa-envelope"></i>
+                                <h4>Email Us</h4>
+                                <p></p>
+                            </div>
+                            <div class="info-card">
+                                <i class="fas fa-phone"></i>
+                                <h4>Call Us</h4>
+                                <p></p>
+                            </div>
+                            <div class="info-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                               <a href="https://maps.app.goo.gl/MqAR1iVci5Gy8ZrR6"> <h4>Visit Us</h4></a>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-section">
+                        <h2>Our Team</h2>
+                        <div class="team-grid">
+                            <div class="team-member">
+                                <img src="iclilogo.png" alt="Team Member">
+                                <h3>__iclicks___</h3>
+                                <p>Photography</p>
+                                <a href="https://www.instagram.com/__iclicks___/?hl=en" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="team-member">
+                                <img src="friend.jpg" alt="Team Member">
+                                <h3>ALOK KUMAR MISHRA</h3>
+                                <p>Photographer</p>
+                                <a href="https://www.instagram.com/__aaalok/?hl=en" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="team-member">
+                                <img src="me22.jpg" alt="Team Member">
+                                <h3>ASIT KUMAR RAUT</h3>
+                                <p>Developer</p>
+                                <a href="https://www.instagram.com/_asit.0.__/?hl=en" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <nav>
+            <button data-page="home">🏠 Home</button>
+            <button data-page="gallery">🖼 Gallery</button>
+            <button data-page="contact">📞 Contact</button>
+        </nav>
+        
+        <div id="fullscreen-overlay" style="display: none;">
+            <img id="fullscreen-image">
+            <button id="close-fullscreen">✕</button>
+        </div>
     </div>
 
     <script src="home.js"></script>
