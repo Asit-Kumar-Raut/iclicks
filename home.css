@@ -924,3 +924,424 @@ textarea:focus {
     color: var(--accent);
     transform: scale(1.2);
 }
+
+
+
+
+
+
+/* ================ ENHANCED ANIMATIONS ================ */
+
+/* Floating animation for elements */
+@keyframes floatEnhanced {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(2deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-2deg); }
+}
+
+/* Glowing border animation */
+@keyframes glowBorder {
+  0%, 100% { box-shadow: 0 0 5px var(--primary); }
+  50% { box-shadow: 0 0 20px var(--accent); }
+}
+
+/* Text flicker animation */
+@keyframes textFlicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+  }
+}
+
+/* Background wave animation */
+@keyframes waveBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 3D flip animation */
+@keyframes flip3D {
+  0% { transform: perspective(1000px) rotateY(0); }
+  100% { transform: perspective(1000px) rotateY(360deg); }
+}
+
+/* Bounce with shadow animation */
+@keyframes bounceWithShadow {
+  0%, 100% { 
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  50% { 
+    transform: translateY(-20px);
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+  }
+}
+
+/* Color cycle animation */
+@keyframes colorCycle {
+  0% { color: var(--primary); }
+  25% { color: var(--accent); }
+  50% { color: var(--neon); }
+  75% { color: var(--secondary); }
+  100% { color: var(--primary); }
+}
+
+/* Jelly effect animation */
+@keyframes jelly {
+  0%, 100% { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
+}
+
+/* Particle explosion animation */
+@keyframes particleExplode {
+  0% { 
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% { 
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* ================ ELEMENT-SPECIFIC ANIMATIONS ================ */
+
+/* Logo animation */
+.logo.floating {
+  animation: floatEnhanced 6s ease-in-out infinite;
+}
+
+/* Navigation button hover animation */
+nav button:hover {
+  animation: jelly 0.5s ease;
+}
+
+/* Content box hover animation */
+.content-box:hover {
+  animation: glowBorder 2s infinite;
+}
+
+/* Gallery image hover animation */
+#photos div:hover {
+  animation: pulse 0.5s ease;
+}
+
+/* Avatar selection animation */
+.avatar-option.selected {
+  animation: bounceWithShadow 0.8s ease;
+}
+
+/* Contact form input focus animation */
+.form-group input:focus {
+  animation: glowBorder 1.5s infinite;
+}
+
+/* Team member hover animation */
+.team-member:hover {
+  animation: floatEnhanced 3s ease-in-out infinite;
+}
+
+/* Social link hover animation */
+.social-link:hover {
+  animation: flip3D 0.6s ease;
+}
+
+/* ================ SPECIAL EFFECTS ================ */
+
+/* Add this to your header for a subtle background animation */
+header {
+  background: linear-gradient(45deg, #000000, #1a1a1a, #000000);
+  background-size: 300% 300%;
+  animation: waveBackground 15s ease infinite;
+}
+
+/* Add this to your main content for a parallax effect */
+.content-wrapper {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Add this to your buttons for a press effect */
+.auth-btn:active, .submit-btn:active, .logout-button:active {
+  animation: jelly 0.4s ease;
+}
+
+/* ================ LOADING ANIMATIONS ================ */
+
+/* Add this for page transition animations */
+.page {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Add this for gallery image loading animation */
+#photos div {
+  animation: scaleIn 0.5s ease-out forwards;
+  animation-delay: calc(var(--delay) * 0.1s);
+}
+
+/* ================ SCROLL ANIMATIONS ================ */
+
+/* Add this for scroll-triggered animations */
+.reveal {
+  position: relative;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+
+
+
+
+
+/* ================ ENHANCED BACKGROUND ANIMATIONS ================ */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    rgba(110, 69, 226, 0.1) 0%, 
+    rgba(136, 211, 206, 0.1) 50%, 
+    rgba(255, 126, 95, 0.1) 100%);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: gradientBG 15s ease infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating particles animation */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 126, 95, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(110, 69, 226, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 40% 60%, rgba(136, 211, 206, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 60% 40%, rgba(15, 240, 252, 0.15) 0%, transparent 20%);
+  z-index: -1;
+  animation: floatParticles 30s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatParticles {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5%, -5%); }
+  50% { transform: translate(5%, 5%); }
+  75% { transform: translate(5%, -5%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ================ ENHANCED ELEMENT ANIMATIONS ================ */
+/* Hover animations for all buttons */
+button {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Special animation for primary buttons */
+.auth-btn, .submit-btn, .logout-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-btn::after, .submit-btn::after, .logout-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.2);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.auth-btn:hover::after, .submit-btn:hover::after, .logout-button:hover::after {
+  left: 100%;
+  top: 100%;
+}
+
+/* Enhanced card animations */
+.content-box, .info-card, .team-member {
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform-style: preserve-3d;
+}
+
+.content-box:hover, .info-card:hover, .team-member:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ================ TEXT ANIMATIONS ================ */
+/* Floating text animation */
+.welcome-title, .gallery-title, .contact-title {
+  animation: floatText 4s ease-in-out infinite;
+}
+
+@keyframes floatText {
+  0%, 100% { transform: translateY(0) rotate(1deg); }
+  50% { transform: translateY(-10px) rotate(-1deg); }
+}
+
+/* Typing animation for headings */
+.welcome-title::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* ================ SPECIAL EFFECTS ================ */
+/* Glow effect for active elements */
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, var(--primary), var(--accent), var(--neon));
+  z-index: -1;
+  opacity: 0.7;
+  filter: blur(10px);
+  animation: glowPulse 2s ease infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+/* ================ SCROLL ANIMATIONS ================ */
+.reveal {
+  opacity: 0;
+  transition: all 1s ease;
+  transform: translateY(30px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.reveal:nth-child(1) { transition-delay: 0.1s; }
+.reveal:nth-child(2) { transition-delay: 0.2s; }
+.reveal:nth-child(3) { transition-delay: 0.3s; }
+.reveal:nth-child(4) { transition-delay: 0.4s; }
+
+/* ================ LOADING ANIMATIONS ================ */
+/* Page transition animation */
+.page {
+  animation: pageFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================ CURSOR EFFECTS ================ */
+/* Custom cursor animation */
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%236e45e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>'), auto;
+}
+
+button, a {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23ff7e5f" stroke="%23ff7e5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>'), pointer;
+}
+
+/* ================ PARALLAX EFFECTS ================ */
+.content-wrapper {
+  transition: transform 0.5s ease-out;
+}
+
+/* ================ HOVER ZOOM EFFECT ================ */
+#photos img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#photos div:hover img {
+  transform: scale(1.2);
+}
+
+/* ================ PULSE ANIMATION FOR IMPORTANT ELEMENTS ================ */
+@keyframes importantPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,126,95,0); }
+  50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,126,95,0.5); }
+}
+
+.important {
+  animation: importantPulse 2s infinite;
+}
+
+/* ================ ROTATING GEAR EFFECT ================ */
+.gear-icon {
+  animation: rotateGear 5s linear infinite;
+}
+
+@keyframes rotateGear {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ================ WAVY UNDERLINE EFFECT ================ */
+.wavy-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.wavy-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 4" preserveAspectRatio="none"><path d="M0,2 C5,0 5,4 10,2 C15,0 15,4 20,2" fill="none" stroke="%23ff7e5f" stroke-width="2"/></svg>');
+  background-size: 20px 4px;
+  animation: waveMove 1s linear infinite;
+}
+
+@keyframes waveMove {
+  from { background-position-x: 0; }
+  to { background-position-x: 20px; }
+}
